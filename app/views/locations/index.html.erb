@@ -5,7 +5,7 @@
 		<% @trip.locations.each do |location| %>
 		<li>
 			<%= link_to location.city, trip_location_path(id: location.id) %>,
-				<%= link_to location.country, trip_location_path(id: location.id) %>
+			<%= link_to location.country, trip_location_path(id: location.id) %>
 		</li>
 		<% end %>
 	</ul>
