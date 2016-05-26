@@ -1,10 +1,12 @@
 class LocationsController < ApplicationController
   def index
-  	@locations = Location.all
+  	@trip = Trip.find(params[:trip_id])
+    @locations = Location.all
   end
 
   def show
-  	@location = Location.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+    @location = Location.find(params[:id])
   end
 
   def new
@@ -15,7 +17,6 @@ class LocationsController < ApplicationController
   def create
     @trip = Trip.find(params[:trip_id])
   	@location = @trip.locations.new(location_params)
-    binding.pry
   	if @location.save
   		redirect_to trip_location_path(id: @location.id)
   	else
@@ -24,7 +25,8 @@ class LocationsController < ApplicationController
   end
 
   def edit
-  	@location = Location.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+    @location = Location.find(params[:id])
   end
 
   def update
@@ -38,7 +40,7 @@ class LocationsController < ApplicationController
 
   def destroy
   	Location.find(params[:id]).destroy
-  	redirect_to locations_path
+  	redirect_to trip_locations_path
   end
 
   private

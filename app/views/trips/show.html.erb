@@ -4,9 +4,14 @@
 <p>Budget: $<%= @trip.budget %></p>
 
 <h2>Locations</h2>
-<% @trip.locations.each do |location|%>
-	<%= location.city %>
-<% end %>
+<ul>
+	<% @trip.locations.each do |location| %>
+		<li><%= location.city %></li>
+	<% end %>
+</ul>
 
-<%= link_to 'Edit', edit_trip_path(@trip) %>
+
+<h3>
+<%= link_to 'Edit', edit_trip_path(@trip) %> | 
 <%= link_to 'Add a Location', new_trip_location_path(trip_id: @trip.id) %>
+</h3>

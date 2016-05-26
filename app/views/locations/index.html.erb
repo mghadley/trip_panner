@@ -1,10 +1,11 @@
-<h1>All Locations</h1>
+<h1>Trip Locations</h1>
 
-<% if @locations.any? %>
+<% if @trip.locations.any? %>
 	<ul>
-		<% @locations.each do |location| %>
+		<% @trip.locations.each do |location| %>
 		<li>
-			<%= link_to location.city, location_path(location) %>, <%= link_to location.country, location_path(location) %>
+			<%= link_to location.city, trip_location_path(id: location.id) %>,
+				<%= link_to location.country, trip_location_path(id: location.id) %>
 		</li>
 		<% end %>
 	</ul>
@@ -13,5 +14,5 @@
 <% end %> 
 
 
-<%= link_to 'New Location', new_location_path %> |
+<%= link_to 'New Location', new_trip_location_path %> |
 <%= link_to 'All Trips', trips_path %>
