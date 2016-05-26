@@ -4,8 +4,8 @@
 	<%= @location.description %>
 </h3>
 
-
-<h4>Addresses</h4>
+<% if @location.addresses.any? %>
+	<h4>Addresses</h4>
 	<ul>
 		<% @location.addresses.each do |address| %>
 		<li>
@@ -17,8 +17,11 @@
 		</li>
 		<% end %>
 	</ul>
+<% else %>
+	<h3>No addresses found. Please create one!</h3>
+<% end %>
 
-
+<%= link_to 'Add a New Address for this Location', new_address_path(location_id: @location.id) %>
 
 <%= link_to 'Edit Location', edit_trip_location_path(id: @location.id)  %>
 
