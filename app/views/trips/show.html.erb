@@ -1,18 +1,24 @@
-<h1><%= @trip.title %></h1>
-<p>Date: <%= @trip.date %></p>
-<p>Length: <%= @trip.length %> days</p>
-<p>Budget: $<%= @trip.budget %></p>
+<div class='trip-show'>
+	<h1><%= @trip.title %></h1>
+	<ul class='list-inline'>
+		<li>Date: <%= @trip.date %></li>
+		<li>Length: <%= @trip.length %> days</li>
+		<li>Budget: $<%= @trip.budget %></li>
+	</ul>
 
-<h2>Locations</h2>
-<ul>
-	<% @trip.locations.each do |location| %>
-		<li><%= location.city %></li>
-	<% end %>
-</ul>
+	<div class='locations'>
+		<h2>Locations</h2>
+		<div class='list-group'>
+			<% @trip.locations.each do |location| %>
+				<%= link_to location.city, trip_location_path(trip_id: @trip.id, id: location.id), class: 'list-group-item' %>
+			<% end %>
+		</div>
+	</div>
 
 
-<h3>
-<%= link_to 'Edit', edit_trip_path(@trip) %> | 
-<%= link_to 'Add a Location', new_trip_location_path(trip_id: @trip.id) %>
-<%= link_to 'Delete this trip', trip_path(@trip), method: :delete %>
-</h3>
+	<h3>
+	<%= link_to 'Edit', edit_trip_path(@trip) %> | 
+	<%= link_to 'Add a Location', new_trip_location_path(trip_id: @trip.id) %> |
+	<%= link_to 'Delete this trip', trip_path(@trip), method: :delete %>
+	</h3>
+</div>

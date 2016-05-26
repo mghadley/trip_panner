@@ -16,10 +16,51 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.form-control, label {
+body {
+	padding-bottom: 70px;
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+.navbar-nav {
+}
+
+.nav {
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+.logo {
+	color: #257A93;
+	margin-left: 20px;
+}
+
+.form-control, label, .btn {
 	margin: 15px 50px 5px 20px;
 }
 
 .form-control {
 	width: 30%;
 }
+
+.index {
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 25px;
+}
+
+.trip-show {
+	margin-left: 50px;
+}
+
+.locations {
+	width: 200px;
+}
+
+
+
+
+

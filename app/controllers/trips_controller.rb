@@ -18,7 +18,7 @@ class TripsController < ApplicationController
   		flash[:success] = 'Trip Created Successfully'
   		redirect_to trip_path(@trip)
   	else
-  		flash[:danger] = @trip.errors.full_messages.join("\n")
+  		flash[:danger] = @trip.errors.full_messages.join("<br/>").html_safe
   		render :new
   	end
   end

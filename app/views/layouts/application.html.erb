@@ -6,9 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
-	<%= link_to 'Create New Trip', new_trip_path %> |
-	<%= link_to 'See All Trips', trips_path %>
+<header class='navbar navbar-inverse'>
+	<h1 class='logo'>Greatest Trip Planner in the World</h1>
+	<%= link_to 'Create New Trip', new_trip_path, class: 'nav navbar-nav pull-right'%>
+	<%= link_to 'See All Trips', trips_path, class: 'nav navbar-nav pull-right'%>
+</header>
 
 	<div class="container">
 	  <% flash.each do |key, value| %>
@@ -18,7 +20,6 @@
 	  <% end %>
 	</div>
 	
-</header>
 <body>
 
 <%= yield %>

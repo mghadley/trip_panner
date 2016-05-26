@@ -1,9 +1,9 @@
 <h1>Trip Locations</h1>
 
 <% if @trip.locations.any? %>
-	<ul>
+	<ul class='list-group'>
 		<% @trip.locations.each do |location| %>
-		<li>
+		<li class='list-group-item'>
 			<%= link_to location.city, trip_location_path(id: location.id) %>,
 			<%= link_to location.country, trip_location_path(id: location.id) %>
 		</li>
