@@ -4,8 +4,13 @@
 <h3><%= @address.city %>, 
 	<%= @address.state %> <%= @address.zip %></h3>
 
-<%= link_to 'Edit Address', edit_address_path(id: @address.id, location_id: @location.id)  %>
+<h3>
+<%= link_to 'Edit Address', edit_address_path(id: @address.id, location_id: @location.id)  %> |
 
-<%= link_to 'Delete Address', address_path(id: @address.id), method: :delete %> 
+<%= link_to 'Delete Address', address_path(id: @address.id), method: :delete %> |
 
-<%= link_to 'All Addresses', addresses_path %>
+<%= link_to 'All Addresses', addresses_path %> |
+
+<%= link_to 'Back to Trip', trip_locations_path(trip_id: @location.trip_id) %> 
+
+</h3>

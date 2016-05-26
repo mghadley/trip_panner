@@ -1,8 +1,8 @@
 <h1>Addresses</h1>
 
-<% if @location.addresses.any? %>
+<% if @addresses.any? %>
 	<ul>
-		<% @location.addresses.each do |address| %>
+		<% @addresses.each do |address| %>
 		<li>
 			<%= link_to address.name, address_path(id: address.id) %>,
 			<%= link_to address.street, address_path(id: address.id) %>,
@@ -15,7 +15,3 @@
 <% else %>
 	<h3>No addresses found. Please create one!</h3>
 <% end %> 
-
-
-<%= link_to 'New Address', new_address_path %> |
-<%= link_to 'All Locations', locations_path %>

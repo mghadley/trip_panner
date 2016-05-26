@@ -1,6 +1,5 @@
 class AddressesController < ApplicationController
   def index
-  	@location = Location.find(params[:location_id])
   	@addresses = Address.all
   end
 
