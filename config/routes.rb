@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'trips#index'
   resources :trips
 
@@ -57,3 +58,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+=======
+  resources :locations
+
+  resources :trips
+end
+>>>>>>> a7999d3b00490c6b13426e9b09e3301892fdab12
