@@ -8,13 +8,16 @@ class LocationsController < ApplicationController
   end
 
   def new
+    @trip = Trip.find(params[:trip_id])
   	@location = Location.new
   end
 
   def create
-  	@location = Location.new(location_params)
+    @trip = Trip.find(params[:trip_id])
+  	@location = @trip.locations.new(location_params)
+    binding.pry
   	if @location.save
-  		redirect_to locations_path
+  		redirect_to trip_location_path(id: @location.id)
   	else
   		render :new
   	end
@@ -27,7 +30,7 @@ class LocationsController < ApplicationController
   def update
   	@location = Location.find(params[:id])
   	if @location.update(location_params)
-  		redirect_to location_path(@location)
+  		redirect_to trip_location_path(@location.id)
   	else
   		render :edit
   	end
@@ -40,7 +43,7 @@ class LocationsController < ApplicationController
 
   private
 
-  def item_params
+  def location_params
   	params.require(:location).permit(:city, :country, :description, :trip_id)
   end
 end

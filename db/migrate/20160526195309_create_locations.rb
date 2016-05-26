@@ -4,6 +4,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :city
       t.string :country
       t.text :description
+      t.belongs_to :trip
 
       t.timestamps null: false
     end

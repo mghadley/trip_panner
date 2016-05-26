@@ -32,6 +32,9 @@ class TripsController < ApplicationController
   	end
   end
 
+  def destroy
+  end
+
   private
 
   def trip_params
