@@ -1,11 +1,13 @@
-<%= form_for @trip do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
-	<%= f.label 'Start Date' %>
-	<%= f.date_select :date %>
-	<%= f.label 'Length (in days)' %>
-	<%= f.number_field :length %>
-	<%= f.label 'Budget (USD)' %>
-	<%= f.number_field :budget, :step => 'any' %>
-	<%= f.submit %>
-<% end %>
+<div class='form-group'>
+	<%= form_for @trip do |f| %>
+		<%= f.label :title %>
+		<%= f.text_field :title, class: 'form-control' %>
+		<%= f.label 'Start Date' %>
+		<%= f.date_select :date, class: 'form-control' %>
+		<%= f.label 'Length (in days)' %>
+		<%= f.number_field :length, class: 'form-control' %>
+		<%= f.label 'Budget (USD)' %>
+		<%= f.number_field :budget, :step => 'any', class: 'form-control' %>
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+	<% end %>
+</div>

@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.form-control, label {
+	margin: 15px 50px 5px 20px;
+}
+
+.form-control {
+	width: 30%;
+}

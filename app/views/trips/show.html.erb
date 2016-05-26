@@ -10,3 +10,4 @@
 
 <%= link_to 'Edit', edit_trip_path(@trip) %>
 <%= link_to 'Add a Location', new_trip_location_path(trip_id: @trip.id) %>
+<%= link_to 'Delete this trip', trip_path(@trip), method: :delete %>

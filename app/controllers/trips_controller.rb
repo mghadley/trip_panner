@@ -15,8 +15,10 @@ class TripsController < ApplicationController
   def create
   	@trip = Trip.new(trip_params)
   	if @trip.save
+  		flash[:success] = 'Trip Created Successfully'
   		redirect_to trip_path(@trip)
   	else
+  		flash[:danger] = @trip.errors.full_messages.join("\n")
   		render :new
   	end
   end
@@ -33,6 +35,11 @@ class TripsController < ApplicationController
   end
 
   def destroy
+  	if @trip.destroy
+  		redirect_to trips_path
+  	else
+  		redirect_to trip_path(@trip)
+  	end
   end
 
   private
