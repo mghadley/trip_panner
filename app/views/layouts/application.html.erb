@@ -6,6 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header>
+	<%= link_to 'Create New Trip', new_trip_path %> |
+	<%= link_to 'See All Trips', trips_path %>
+</header>
 <body>
 
 <%= yield %>

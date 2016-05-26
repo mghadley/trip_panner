@@ -1,0 +1,11 @@
+<%= form_for @trip do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label 'Start Date' %>
+	<%= f.date_select :date %>
+	<%= f.label 'Length (in days)' %>
+	<%= f.number_field :length %>
+	<%= f.label 'Budget (USD)' %>
+	<%= f.number_field :budget, :step => 'any' %>
+	<%= f.submit %>
+<% end %>
