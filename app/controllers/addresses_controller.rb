@@ -17,8 +17,10 @@ class AddressesController < ApplicationController
   	@location = Location.find(params[:address][:location_id])
   	@address = @location.addresses.new(address_params)
   	if @address.save
+      flash[:success] = "Address Added Successfully"
   		redirect_to address_path(id: @address.id, location_id: @location.id)
   	else
+      flash[:danger] = @address.errors.full_messages.join('<br/>').html_safe
   		render :new
   	end
   end

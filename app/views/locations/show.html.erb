@@ -1,39 +1,6 @@
 <div class='show'>
 	<h1><%= @location.city %>, <%= @location.country %></h1>
 
-<<<<<<< 75f421aaad57390251f2368edf833a39b1eed39e
-<h3>
-	<%= @location.description %>
-</h3>
-
-<% if @location.addresses.any? %>
-	<h4>Addresses</h4>
-	<ul>
-		<% @location.addresses.each do |address| %>
-		<li>
-			<%= link_to address.name, address_path(id: address.id, location_id: @location.id) %>,
-			<%= link_to address.street, address_path(id: address.id, location_id: @location.id) %>,
-			<%= link_to address.city, address_path(id: address.id, location_id: @location.id) %>,
-			<%= link_to address.state, address_path(id: address.id, location_id: @location.id) %>,
-			<%= link_to address.zip, address_path(id: address.id, location_id: @location.id) %>
-		</li>
-		<% end %>
-	</ul>
-<% else %>
-	<h3>No addresses found. Please create one!</h3>
-<% end %>
-
-<h3>
-<%= link_to 'Add a New Address for this Location', new_address_path(location_id: @location.id) %> |
-
-<%= link_to 'Edit Location', edit_trip_location_path(id: @location.id)  %> |
-
-<%= link_to 'Delete Location', trip_location_path(id: @location.id), method: :delete %> |
-
-<%= link_to 'All Locations', trip_locations_path %>
-
-</h3>
-=======
 	<h3>
 		<%= @location.description %>
 	</h3>
@@ -58,4 +25,3 @@
 
 	<%= link_to 'All Locations', trip_locations_path %>
 </div>
->>>>>>> more styling
