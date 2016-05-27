@@ -1,11 +1,14 @@
+<div class='show'>
 <h1><%= @address.name %></h1>
 
 <h3><%= @address.street %></h3>
 <h3><%= @address.city %>, 
 	<%= @address.state %> <%= @address.zip %></h3>
 
-<%= link_to 'Edit Address', edit_address_path(id: @address.id, location_id: @location.id)  %>
+<%= link_to 'Edit Address', edit_address_path(id: @address.id, location_id: @location.id)  %> |
 
-<%= link_to 'Delete Address', address_path(id: @address.id), method: :delete %> 
+<%= link_to 'Delete Address', address_path(id: @address.id), method: :delete %> |
 
 <%= link_to 'All Addresses', addresses_path %>
+
+trip_location_path(id: @address.location_id. trip)
