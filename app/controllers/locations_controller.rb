@@ -18,10 +18,10 @@ class LocationsController < ApplicationController
     @trip = Trip.find(params[:trip_id])
   	@location = @trip.locations.new(location_params)
   	if @location.save
-      flash[:success] = "Location Added Successfully"
+      flash.now[:success] = "Location Added Successfully"
   		redirect_to trip_location_path(id: @location.id)
   	else
-      flash[:danger] = @location.errors.full_messages.join('<br/>').html_safe
+      flash.now[:danger] = @location.errors.full_messages.join('<br/>').html_safe
   		render :new
   	end
   end

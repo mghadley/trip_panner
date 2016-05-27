@@ -15,10 +15,10 @@ class TripsController < ApplicationController
   def create
   	@trip = Trip.new(trip_params)
   	if @trip.save
-  		flash[:success] = 'Trip Created Successfully'
+  		flash.now[:success] = 'Trip Created Successfully'
   		redirect_to trip_path(@trip)
   	else
-  		flash[:danger] = @trip.errors.full_messages.join("<br/>").html_safe
+  		flash.now[:danger] = @trip.errors.full_messages.join("<br/>").html_safe
   		render :new
   	end
   end
